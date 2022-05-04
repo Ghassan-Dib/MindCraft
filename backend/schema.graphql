@@ -1,0 +1,25 @@
+type User {
+  id: ID!
+  name: String!
+  email: String!
+  password: String!
+}
+
+type Contact {
+  name: String!
+  email: String!
+  message: String!
+}
+
+type Query {
+  users: [User!]
+  user(id: ID!): User
+  contacts: [Contact!]
+}
+
+type Mutation {
+  createUser (name: String!, email: String!, password: String!): User!
+  createContact (name: String!, email: String!, message: String!): Contact!
+  updateContact (name: String!, email: String!, message: String!): Contact!
+  deleteContact (email: String!): String!
+}

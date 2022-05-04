@@ -1,0 +1,87 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  background-color: $dark;
+  padding: 2rem 0;
+
+  &__list {
+    margin: 2rem 0;
+    width: 70%;
+    .item {
+      margin: 5rem 2rem;
+      h3, li {
+        color: $light;
+      }
+      .title {
+        margin: 1rem 0;
+        font-weight: bold;
+        font-size: 20px;
+        line-height: 28px;
+        letter-spacing: 0.1px;
+      }
+      .list {
+        li {
+          margin: 1rem 0;
+          font-weight: normal;
+          font-size: 15px;
+          line-height: 28px;
+          letter-spacing: 0.2px;
+        }
+      }
+    }
+  }
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+    .address {
+      display: flex;
+      flex-direction: row;
+      margin: 1rem 0;
+      align-items: center;
+      img {
+        filter: brightness(0) invert(1);
+      }
+      h6 {
+        color: $light;
+        margin: 0 1rem;
+      }
+    }
+    .social-media {
+      margin: 2rem 0 5rem 0;
+      .icon {
+        color: $light;
+        margin: 0 2rem 0 0; 
+      }
+    }
+  }
+  @include desktopScreen {
+    text-align: start;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 5rem 0;
+    &__list {
+      display: flex;
+      width: fit-content;
+      margin: 0 0rem 0 7rem;
+      .item {
+        margin: 0 3rem;
+        .title {
+          text-align: start;
+        }
+      }
+    }
+    &__contacts {
+      align-items: flex-start;
+      margin: 0 10rem;
+      .social-media {
+        ion-icon {
+          padding: 0 2rem 0 0;
+        }
+      }
+    }
+  }
+}

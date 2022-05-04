@@ -1,0 +1,67 @@
+@mixin btn ($bg, $textColor, $width) {
+  color: $textColor;
+  background: $btn;
+  border-radius: $borderRadius;
+  align-items: center;
+  padding: 10px;
+  width: $width;
+  height: 50px;
+  cursor: pointer;
+  outline: none;
+  font-size: 1.5rem;
+  border: 1px solid transparent;
+  transition: 0.3s ease all;
+  &:hover {
+    border-color: $primary;
+    background: rgba($color: $dark, $alpha: 0.6);
+    color: $primary;
+  }
+  &:active {
+    border-color: $dark;
+    background: linear-gradient(rgba($dark, 0.3), rgba($primary, 0.6));
+    color: $light;
+  }
+}
+
+@mixin background {
+  background: $img;
+  background-position: center;
+  background-size: cover;
+  background-blend-mode: darken;
+}
+
+@mixin inputBox () {
+  padding-left: 19px;
+  width: 100%;
+  height: 3rem;
+  left: 50px;
+  background:$inputBox;
+  border: 1px solid $inputBorder;
+  box-sizing: border-box;
+  border-radius: 39px;
+  &::placeholder {
+    color: $dark;
+  }
+}
+
+
+@mixin contactItem($width: 170px, $mt: 10px) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: fit-content;
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+
+  h6 {
+    margin-top: $mt;
+    text-align: center;
+    width: 300px;
+    @include sm {
+      margin-top: 0;
+      margin-left: 10px;
+      text-align: start;
+    }
+  }
+}

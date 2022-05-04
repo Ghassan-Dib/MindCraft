@@ -1,0 +1,76 @@
+.content-testimonials {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  padding: 2rem 2rem;
+  margin-top: -1px;
+  width: 100%;
+  &__text {
+    margin: 5rem 1rem;
+    h2 {
+      font-size: 48px;
+    }
+  }
+
+  &__items {
+    padding: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h4 {
+      margin: 3rem 0px;
+      font-weight: bold;
+      font-size: calc(13px + .4vw);
+      line-height: 17px;
+      text-align: center;
+      letter-spacing: 0.16px;
+    }
+    .client {
+      margin: 1rem 0;
+      width: fit-content;
+      display: flex;
+      flex-direction: row;
+      &-description {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start; 
+        margin: 0 5px;
+        h6, p {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+
+  &__actions {
+    button {
+      margin: 2rem 0;
+      @include btn($btn, $textColor, 275px);
+    }
+  }
+
+  @include desktopScreen {
+    &__items {
+      h4 {
+        font-weight: normal;
+        font-size: 28px;
+        line-height: 40px;
+        letter-spacing: 0.2px;
+        margin: 4rem 9rem;
+      }
+      .client {
+        margin: 1rem 0;
+        width: fit-content;
+        display: flex;
+        flex-direction: row;
+        &-description {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start; 
+          margin: 0 5px;
+        }
+      }
+    }
+  }
+}

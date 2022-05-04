@@ -1,0 +1,172 @@
+.contact-content {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  padding: 10rem 0rem 0rem 0rem;
+  width: 100%;
+  &__text {
+    display: flex;
+    flex-direction: column;
+    text-align: center; 
+    align-items: center;
+    h4 {
+      margin: 2rem 2rem;
+    }
+    .desk {
+      display: none;
+    }
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    &__media {
+      width: fit-content;
+      margin: 3rem 0;
+      .icon{
+        color: #2091F9;
+        margin: 0 1.5rem 0 0;
+      }
+      .dark {
+        color: $light;
+        margin: 0 1.5rem 0 0;
+      }
+    }
+    &__items {
+      display: flex;
+      flex-direction: column;
+      width: 90%;
+      margin: 0 0 5rem 0;
+      .item {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin: 1rem 0 0 1rem;
+        h6 {
+          text-align: start;
+          margin-left: 1.5rem;
+          font-size: calc(14px + 0.1vw);
+        }
+      }
+      .dark {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin: 1rem 0 0 1rem;
+        h6 {
+          text-align: start;
+          margin-left: 1.5rem;
+          font-size: calc(14px + 0.1vw);
+        }
+        img {
+          filter: brightness(0) invert(1);
+        }
+      }
+    }
+    &__form { 
+      display: flex;
+      flex-direction: column;
+      padding: 1rem 2rem;
+      border: 1px solid #DDDDDD;
+      box-sizing: border-box;
+      box-shadow: 0px 13px 19px rgba(0, 0, 0, 0.07);
+      border-radius: 20px;
+      width: 90%;
+      h3 {
+        margin: 2rem 0;
+      }
+      #name {
+        @include inputBox();
+      }
+      #email {
+        @include inputBox();
+        margin: 2rem 0;
+      }
+      #message {
+        @include inputBox();
+        padding: 1rem 1rem;
+        height: 12rem;
+        border-radius: 0;
+        resize: none;
+      }
+      button {
+        margin: 3rem 0;
+        @include btn(#2091F9, $light, 145px);
+      }
+    }
+    &__map {
+      display: none;
+    }
+  }
+
+  @include desktopScreen {
+    &__text {
+      .desk {
+        display: block;
+        width: 55%;
+      }
+      .mobile {
+        display: none;
+      }
+    }
+    .container {
+      margin: 2rem 0;
+      width: 80%;
+      display: grid;
+      grid-template-columns: repeat(16, 1fr);
+      grid-template-columns: repeat(3, 1fr);
+      &__form{
+        grid-column: 1/6;
+        grid-row: 1/4;
+      }
+      &__items{
+        width: fit-content;
+        grid-column: 10/17;
+        grid-row: 1/2;
+        display: flex;
+        flex-direction: row;
+        
+        .item {
+          padding-top: 2.5rem;
+          width: fit-content;
+          flex-direction: column;
+          align-items: center;
+          margin: 0;
+          img {
+            height: 30%;
+          }
+          h6 {
+            max-width: 300px;
+            text-align: center;
+            padding-top: 1rem;
+          }
+        }
+        .dark {
+          padding-top: 2.5rem;
+          width: fit-content;
+          flex-direction: column;
+          align-items: center;
+          margin: 0;
+          h6 {
+            max-width: 300px;
+            text-align: center;
+            padding-top: 1rem;
+          }     
+        }
+      }
+      &__map {
+        display: block;
+        margin-left: 3rem;
+        grid-column: 8/17;
+        grid-row: 2/3;
+      }
+      &__media{
+        grid-column: 9/16;
+        grid-row: 3/4;
+        padding-left: 1rem;
+      }
+    }
+  }
+}

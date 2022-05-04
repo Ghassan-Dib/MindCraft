@@ -1,0 +1,114 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  // align-items: center;
+  padding: 40px 0;
+  margin-top: -1px;
+  width: 100%;
+
+  &__texts {
+    margin: 2rem 0 4rem 0;
+    .desk {
+      display: none;
+    }
+    padding: 0 20px;
+    h2 {
+      padding: 20px 0;
+    }
+  }
+
+  &__img {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    img {
+      width: 90%;
+      height: 50%;
+    }
+  }
+
+  &__subscribe {
+    margin: 5rem 0;
+    p {
+      margin: .5rem 0;
+      font-size: 18px;
+    }
+    &__inputs {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 1rem 0;
+      input {
+        padding: 19px 39px;
+        width: 80%;
+        background: $inputBox;
+        border: 1px solid $inputBorder;
+        box-sizing: border-box;
+        border-radius: 39px;
+        margin: 1rem 0;
+      }
+      button {
+        @include btn($btn, $textColor, 80%);
+      }
+    }
+  }
+
+  @include desktopScreen {
+    padding: 10rem 2rem;
+    display: grid;
+    grid-template-areas: 
+      'img img img img texts texts'
+      'img img img img texts texts'
+      'img img img img subs subs'
+      'img img img img subs subs';
+    &__img {
+      grid-area: img;
+      margin: 0 10rem 0 1rem;
+      img {
+        width: 120%;
+        height: 100%;
+      }
+    }
+    &__texts {
+      grid-area: texts;
+      order: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      text-align: left;
+      margin: 0 90px;
+      padding: 0;
+      h4 {
+        display: none;
+      }
+      .desk {
+        display: block;
+      }
+      .mobile {
+        display: none;
+      }
+    }
+    &__subscribe {
+      grid-area: subs;
+      order: 3;
+      height: fit-content;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      margin: 0 90px;
+      &__inputs {
+        flex-direction: row;
+        width: 100%;
+        input {
+          width: 50%;
+        }
+        button {
+          margin: 0 10px;
+          @include btn($btn, $textColor, 30%);
+        }
+      }
+    }
+
+  }
+}

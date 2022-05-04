@@ -1,0 +1,23 @@
+@import "./utils/variables";
+@import "./utils/mixins";
+@import "./utils/breakPoints";
+
+
+@import "./layout/pricinglayout";
+@import "./layout/StandardPricingLayout";
+@import "./layout/contactCard";
+@import "./base/base";
+@import "./base/typography";
+
+
+@import "./components/themeToggle";
+@import "./components/header";
+@import "./components/features";
+@import "./components/herolight";
+@import "./components/lightcta";
+@import "./components/partners";
+@import "./components/testimonials";
+@import "./components/pricing";
+@import "./components/contact";
+@import "./components/footer";
+@import "./components/contactPage.scss";
