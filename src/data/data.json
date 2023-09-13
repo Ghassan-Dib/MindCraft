@@ -1,9 +1,9 @@
 {
   "Header": {
     "img": "logo.png",
-    "title": "The best products start with Figma",
-    "text": "Most calendars are designed for teams.",
-    "text2": "Most calendars are designed for teams. Slate is designed for freelancers"
+    "title": "The best products start with MindCraft",
+    "text": "Learn how to study, NOT copy",
+    "text2": "Learn how to study, NOT copy"
   },
   "Contact": {
     "img": "ibm-logo.png",
@@ -20,7 +20,7 @@
   },
   "HeroLight": {
     "img": "macbook.png",
-    "title": "Fastest way to organize",
+    "title": "Learning Path",
     "text": "Most calendars are designed for teams.",
     "text2": "Most calendars are designed for teams. Slate is designed for freelancers"
   },
@@ -29,7 +29,7 @@
     "text1": "Subscribe to our Newsletter",
     "text2": "Available exclusivery on Figmaland",
     "text3": "At your fingertips",
-    "text4": "Lightning fast prototyping",
+    "text4": "Plagiarism Detection tool",
     "text5": "Newsletter",
     "text6": "Most calendars are designed for teams.",
     "text7": "Most calendars are designed for teams. Slate is designed for freelancers"
@@ -67,17 +67,17 @@
     "list": [
       {
         "img": "square-circle.png",
-        "title": "OpenType features Variable fonts",
+        "title": "Plagiarism Checker",
         "text": "Slate helps you see how many more days you need to work to reach your financial goal."
       },
       {
         "img": "pen.png",
-        "title": "Design with real data",
+        "title": "Learning Path",
         "text": "Slate helps you see how many more days you need to work to reach your financial goal."
       },
       {
         "img": "brush.png",
-        "title": "Fastest way to take action",
+        "title": "Assignment System",
         "text": "Slate helps you see how many more days you need to work to reach your financial goal."
       }
     ]

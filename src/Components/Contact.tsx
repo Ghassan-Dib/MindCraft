@@ -1,17 +1,17 @@
-import React from 'react';
-import { useGlobalThemeContext } from '.././theme/themeContext';
-import mail from '../images/mail.png';
-import phone from '../images/phone.png';
-import location from '../images/location.png';
-import map from '../images/map.png';
-import ContactItem from './ContactItem';
-import ContactForm from './ContactForm';
-import ContactList from './ContactsList';
-import { IoLogoFacebook } from 'react-icons/io';
-import { IoLogoLinkedin } from 'react-icons/io';
-import { IoLogoTwitter } from 'react-icons/io';
-import { Link } from 'react-router-dom';
-import { BrowserRouter } from 'react-router-dom';
+import React from "react";
+import { useGlobalThemeContext } from ".././theme/themeContext";
+import mail from "../images/mail.png";
+import phone from "../images/phone.png";
+import location from "../images/location.png";
+import map from "../images/map.png";
+import ContactItem from "./ContactItem";
+import ContactForm from "./ContactForm";
+import ContactList from "./ContactsList";
+import { IoLogoFacebook } from "react-icons/io";
+import { IoLogoLinkedin } from "react-icons/io";
+import { IoLogoTwitter } from "react-icons/io";
+import { Link } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 
 interface ContactInfo {
   data: {
@@ -23,8 +23,8 @@ interface ContactInfo {
 
 const Contact: React.FC<ContactInfo> = ({ data: { text, text2, title } }) => {
   const { theme } = useGlobalThemeContext();
-  const themeClassIcon = theme === 'dark' ? 'dark' : 'icon';
-  const themeClass = theme === 'dark' ? 'is-dark' : '';
+  const themeClassIcon = theme === "dark" ? "dark" : "icon";
+  const themeClass = theme === "dark" ? "is-dark" : "";
   return (
     <div className={`contact-content ${themeClass}`}>
       <div className="contact-content__text">
@@ -49,10 +49,12 @@ const Contact: React.FC<ContactInfo> = ({ data: { text, text2, title } }) => {
         <div className="container__items">
           <ContactItem
             img={location}
-            text={'6386 Spring St undefined Anchorage, Georgia 12473 United States'}
+            text={
+              "6386 Spring St undefined Anchorage, Georgia 12473 United States"
+            }
           />
-          <ContactItem img={phone} text={'(843) 555-0130'} />
-          <ContactItem img={mail} text={'willie.jennings@example.com'} />
+          <ContactItem img={phone} text={"(843) 555-0130"} />
+          <ContactItem img={mail} text={"willie.jennings@example.com"} />
         </div>
         <ContactForm />
         <div className="container__map">

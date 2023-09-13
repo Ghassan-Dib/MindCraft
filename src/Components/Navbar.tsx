@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { BiMenuAltRight } from 'react-icons/bi';
-import { AiOutlineClose } from 'react-icons/ai';
-import { IoLogoFacebook } from 'react-icons/io';
-import { IoLogoLinkedin } from 'react-icons/io';
-import { IoLogoTwitter } from 'react-icons/io';
-import ThemeToggle from './ThemeToggle';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { BiMenuAltRight } from "react-icons/bi";
+import { AiOutlineClose } from "react-icons/ai";
+import { IoLogoFacebook } from "react-icons/io";
+import { IoLogoLinkedin } from "react-icons/io";
+import { IoLogoTwitter } from "react-icons/io";
+import ThemeToggle from "./ThemeToggle";
 
 interface NavInfo {
   img: string;
@@ -16,7 +16,7 @@ const Navbar: React.FC<NavInfo> = ({ img }) => {
   const menuToggleHandler = () => {
     setMenuOpen((p) => !p);
   };
-  const menuOpenClassname = menuOpen ? 'is-menu-open' : '';
+  const menuOpenClassname = menuOpen ? "is-menu-open" : "";
   return (
     <div className="navbar__content">
       <nav className={`navbar__content__nav ${menuOpenClassname}`}>
@@ -38,7 +38,13 @@ const Navbar: React.FC<NavInfo> = ({ img }) => {
           </li>
         </ul>
       </nav>
-      <img className="center" src={require('../images/' + img)} alt="logo" />
+      <img
+        className="center"
+        src={require("../images/" + img)}
+        alt="logo"
+        width="350"
+        height="250"
+      />
       <div className={`right${menuOpenClassname}`}>
         <Link to="">
           <IoLogoTwitter size={40} className="icon" />
