@@ -59,14 +59,14 @@ jobs:
                   "text": {
                     "type": "mrkdwn",
                     "text": "Here's a list of the flaky tests to 5 in this report:\n LIST"
-                  },
+                  }
                 },
                 {
                   "type": "section",
                   "text": {
                     "type": "mrkdwn",
                     "text": "Here's a list of the failed tests to 5 in this report:\n LIST"
-                  },
+                  }
                 }
               ]
             }
