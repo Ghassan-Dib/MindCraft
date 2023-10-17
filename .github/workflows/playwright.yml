@@ -1,0 +1,84 @@
+name: slack-notification
+
+on: [push, pull_request]
+
+env:
+  CHANNEL_ID: "C061UDS4X33"
+  HAS_FLAKY_TESTS: "true"
+  HAS_FAILED_TESTS: "true"
+jobs:
+  slack-notifications:
+    runs-on: ubuntu-latest
+    name: Sends a message to Slack when a push, a pull request or an issue is made
+    steps:
+      - name: Post Failed Staging Environment Results to Slack Channel
+        uses: slackapi/slack-github-action@v1.24.0
+        with:
+          channel-id: ${{ env.CHANNEL_ID }}
+          payload: |
+            {
+              "text": "Aboard Staging Test Results:",
+              "blocks": [
+                {
+                  "type": "header",
+                  "text": {
+                    "type": "plain_text",
+                    "text": "Aboard Staging Test Results"
+                  }
+                },
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": "Some Tests *Failed* for Staging"
+                  }
+                },
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": "Successful Tests Percentage: *45%*"
+                  }
+                },
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": "Failed Tests Percentage: *15%*"
+                  }
+                },
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": "Flaky Tests Percentage: *12%*"
+                  }
+                },
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": "Here's a list of the flaky tests to 5 in this report:\n LIST"
+                  },
+                  "when": ${{ env.HAS_FLAKY_TESTS == 'true' }}
+                },
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": "Here's a list of the failed tests to 5 in this report:\n LIST"
+                  },
+                  "when": ${{ env.HAS_FAILED_TESTS == 'true' }}
+                },
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": "You can download the detailed test results from the artifacts in the run details."
+                  }
+                },
+                
+              ]
+            }
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_AUTH_TOKEN }}
