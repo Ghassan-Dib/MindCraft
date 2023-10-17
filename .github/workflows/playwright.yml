@@ -68,7 +68,7 @@ jobs:
                     "type": "mrkdwn",
                     "text": "Tests: \n ${{ env.TMP_MESSAGE }}"
                   }
-                },
+                }
               ]
             }
     env:
