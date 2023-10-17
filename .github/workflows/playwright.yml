@@ -14,7 +14,7 @@ jobs:
       - name: Configure Environment Variables
         run: |
           if [[ "$HAS_FLAKY_TESTS" == "true" && "$HAS_FAILED_TESTS" == "true" ]]; then
-            echo TMP_MESSAGE=$(printf "%s%s\n" "here's the list of flaky tests" " here's the list of failed tests") >> $GITHUB_ENV
+            echo TMP_MESSAGE=$(printf "%s%s\n" "here's the list of flaky tests \n" " here's the list of failed tests") >> $GITHUB_ENV
           elif [[ "$HAS_FLAKY_TESTS" == "true" ]]; then
             echo TMP_MESSAGE="$TMP_MESSAGE\n here's the list of flaky tests" >> $GITHUB_ENV
           elif [[ "$HAS_FAILED_TESTS" == "true" ]]; then
