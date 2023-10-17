@@ -15,6 +15,7 @@ jobs:
         run: |
           if [[ "$HAS_FLAKY_TESTS" == "true" ]]; then
             echo TMP_MESSAGE="$TMP_MESSAGE\n here's the list of flaky tests" >> $GITHUB_ENV
+          fi
           if [[ "$HAS_FAILED_TESTS" == "true" ]]; then
             echo TMP_MESSAGE="$TMP_MESSAGE\n here's the list of failed tests" >> $GITHUB_ENV
           fi
