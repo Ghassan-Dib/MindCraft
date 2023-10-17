@@ -60,8 +60,8 @@ jobs:
                     "type": "mrkdwn",
                     "text": "Here's a list of the flaky tests to 5 in this report:\n LIST"
                   },
-                  "when": {
-                    "value": ${{ env.HAS_FLAKY_TESTS == 'true' }}
+                  "if": {
+                    "value": ${{ env.HAS_FAILED_TESTS == 'true' }}
                   }
                 },
                 {
