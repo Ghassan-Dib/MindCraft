@@ -5,7 +5,7 @@ on: [push, pull_request]
 env:
   CHANNEL_ID: "C061UDS4X33"
   HAS_FLAKY_TESTS: "true"
-  HAS_FAILED_TESTS: "true"
+  HAS_FAILED_TESTS: "false"
 jobs:
   slack-notifications:
     runs-on: ubuntu-latest
@@ -13,10 +13,13 @@ jobs:
     steps:
       - name: Configure Environment Variables
         run: |
+          echo FAILED_TESTS_MESSAGE="GHASSAN dieeeb" >> $GITHUB_ENV
+          echo "FLAKY_TESTS_MESSAGE=$(jq -r '.flakyTestsMessage' ./summary.json)" >> $GITHUB_ENV
+
           if [[ "$HAS_FLAKY_TESTS" == "true" && "$HAS_FAILED_TESTS" == "true" ]]; then
             echo TMP_MESSAGE=$(printf "%s%s\n" "here's the list of flaky tests \n" " here's the list of failed tests") >> $GITHUB_ENV
           elif [[ "$HAS_FLAKY_TESTS" == "true" ]]; then
-            echo TMP_MESSAGE="$TMP_MESSAGE\n here's the list of flaky tests" >> $GITHUB_ENV
+            echo TMP_MESSAGE="$TMP_MESSAGE\n here's the list of ${{env.FAILED_TESTS_MESSAGE}}" >> $GITHUB_ENV
           elif [[ "$HAS_FAILED_TESTS" == "true" ]]; then
             echo TMP_MESSAGE="$TMP_MESSAGE\n here's the list of failed tests" >> $GITHUB_ENV
           fi
