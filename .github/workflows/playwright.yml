@@ -4,7 +4,7 @@ on: [push, pull_request]
 
 env:
   CHANNEL_ID: "C061UDS4X33"
-  HAS_FLAKY_TESTS: "true"
+  HAS_FLAKY_TESTS: "false"
   HAS_FAILED_TESTS: "true"
 jobs:
   slack-notifications:
