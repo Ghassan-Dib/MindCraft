@@ -4,8 +4,8 @@ on: [push, pull_request]
 
 env:
   CHANNEL_ID: "C061UDS4X33"
-  HAS_FLAKY_TESTS: "true"
-  HAS_FAILED_TESTS: "false"
+  HAS_FLAKY_TESTS: "false"
+  HAS_FAILED_TESTS: "true"
 jobs:
   slack-notifications:
     runs-on: ubuntu-latest
@@ -21,7 +21,7 @@ jobs:
           elif [[ "$HAS_FLAKY_TESTS" == "true" ]]; then
             echo TMP_MESSAGE="$TMP_MESSAGE\n here's the list of ${{env.FAILED_TESTS_MESSAGE}}" >> $GITHUB_ENV
           elif [[ "$HAS_FAILED_TESTS" == "true" ]]; then
-            echo TMP_MESSAGE="$TMP_MESSAGE\n here's the list of failed tests" >> $GITHUB_ENV
+            echo TMP_MESSAGE="\\n" >> $GITHUB_ENV
           fi
 
       - name: Post Failed Staging Environment Results to Slack Channel
