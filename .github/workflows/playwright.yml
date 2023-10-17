@@ -60,7 +60,6 @@ jobs:
                     "type": "mrkdwn",
                     "text": "Here's a list of the flaky tests to 5 in this report:\n LIST"
                   },
-                  "when": ${{ env.HAS_FLAKY_TESTS == 'true' }}
                 },
                 {
                   "type": "section",
@@ -68,7 +67,6 @@ jobs:
                     "type": "mrkdwn",
                     "text": "Here's a list of the failed tests to 5 in this report:\n LIST"
                   },
-                  "when": ${{ env.HAS_FAILED_TESTS == 'true' }}
                 }
               ]
             }
