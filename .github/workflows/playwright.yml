@@ -71,7 +71,7 @@ jobs:
                   "type": "section",
                   "text": {
                     "type": "mrkdwn",
-                    "text": "Tests: \n ${{ env.TMP_MESSAGE }}"
+                    "text": "${{ env.TMP_MESSAGE }}"
                   }
                 }
               ]
