@@ -22,7 +22,7 @@ jobs:
               }
             }"  >> $GITHUB_ENV
           else
-            echo flaky_section=""  >> $GITHUB_ENV
+            echo flaky_section="" 
           fi
 
           if [[ "$HAS_FAILED_TESTS" == "true" ]]; then
@@ -34,7 +34,7 @@ jobs:
               }
             }"  >> $GITHUB_ENV
           else
-            echo failed_section=""  >> $GITHUB_ENV
+            echo failed_section=""  
           fi
 
       - name: Post Failed Staging Environment Results to Slack Channel
@@ -73,8 +73,8 @@ jobs:
                     "text": "Failed Tests Percentage: *15%*"
                   }
                 },
-                ${{ env.flaky_section }},
-                ${{ env.failed_section }},
+                $flaky_section,
+                $failed_section,
                 {
                   "type": "section",
                   "text": {
