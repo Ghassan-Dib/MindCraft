@@ -14,9 +14,9 @@ jobs:
       - name: Configure Environment Variables
         run: |
           if [[ "$HAS_FLAKY_TESTS" == "true" ]]; then
-            echo TEST_MESSAGE="FLAKY Tests message: \n here is the message"  >> $GITHUB_ENV
-          else
-            echo TEST_MESSAGE="NO FLAKY TESTS!" >> $GITHUB_ENV
+            echo TMP_MESSAGE="$TMP_MESSAGE\nFLAKY Tests message: \n here is the message" >> $GITHUB_ENV
+          elif [[ "$HAS_FAILED_TESTS" == "true" ]]; then
+            echo TMP_MESSAGE="$TMP_MESSAGE\nFAILED Tests message: \n here is the message" >> $GITHUB_ENV
           fi
 
       - name: Post Failed Staging Environment Results to Slack Channel
@@ -59,23 +59,16 @@ jobs:
                   "type": "section",
                   "text": {
                     "type": "mrkdwn",
-                    "text": "${{ env.TEST_MESSAGE }}"
+                    "text": "Flaky Tests Percentage: *15%*"
                   }
                 },
                 {
                   "type": "section",
                   "text": {
                     "type": "mrkdwn",
-                    "text": "Failed Tests message: List"
+                    "text": "Tests: \n ${{ env.TMP_MESSAGE }}"
                   }
                 },
-                {
-                  "type": "section",
-                  "text": {
-                    "type": "mrkdwn",
-                    "text": "Here's a list of the failed tests to 5 in this report:\n LIST"
-                  }
-                }
               ]
             }
     env:
