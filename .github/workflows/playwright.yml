@@ -69,8 +69,8 @@ jobs:
                     "text": "Here's a list of the failed tests to 5 in this report:\n LIST"
                   },
                   "when": ${{ env.HAS_FAILED_TESTS == 'true' }}
-                },
+                }
               ]
             }
-        env:
-          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_AUTH_TOKEN }}
+    env:
+      SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_AUTH_TOKEN }}
