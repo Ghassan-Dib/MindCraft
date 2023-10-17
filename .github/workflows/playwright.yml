@@ -16,7 +16,7 @@ jobs:
           if [[ "$HAS_FLAKY_TESTS" == "true" ]]; then
             echo TEST_MESSAGE="FLAKY Tests message: \n here is the message"  >> $GITHUB_ENV
           else
-            echo TEST_MESSAGE="" >> $GITHUB_ENV
+            echo TEST_MESSAGE="NO FLAKY TESTS!" >> $GITHUB_ENV
           fi
 
       - name: Post Failed Staging Environment Results to Slack Channel
