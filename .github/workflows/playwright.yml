@@ -70,14 +70,6 @@ jobs:
                   },
                   "when": ${{ env.HAS_FAILED_TESTS == 'true' }}
                 },
-                {
-                  "type": "section",
-                  "text": {
-                    "type": "mrkdwn",
-                    "text": "You can download the detailed test results from the artifacts in the run details."
-                  }
-                },
-                
               ]
             }
         env:
