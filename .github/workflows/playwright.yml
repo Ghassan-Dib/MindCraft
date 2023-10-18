@@ -71,7 +71,7 @@ jobs:
                   "type": "section",
                   "text": {
                     "type": "mrkdwn",
-                    "text": "${{ env.TMP_MESSAGE }}"
+                    "text": "Here's a list of up to 5 flaky tests: \\n• test1\\n• test2\\n• test4\\n• test5\\n• test7 \\n \\n Here's a list of up to 5 failed tests: \\n• test3"
                   }
                 }
               ]
